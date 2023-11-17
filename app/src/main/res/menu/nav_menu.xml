@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:title="Home" />
+        <item android:id="@+id/nav_barbers"
+            android:title="Barbers" />
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_bookings"
+                    android:title="Bookings" />
+                <item android:id="@+id/nav_profile"
+                    android:title="My Account" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Connect With Us">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_consultation"
+                    android:title="Consultation" />
+                <item android:id="@+id/nav_review"
+                    android:title="Leave A Review" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

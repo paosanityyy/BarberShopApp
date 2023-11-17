@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BarberShopApp</string>
+    <string name="open">Open Nav</string>
+    <string name="close">Close Nav</string>
+</resources>
