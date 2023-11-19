@@ -18,13 +18,13 @@ import com.google.android.material.navigation.NavigationView;
 
 import ca.georgebrown.comp3074.barbershopapp.R;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
-    public void openLoginActivity(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void openRegistrationActivity(View view) {
+        Intent intent = new Intent(this, RegistrationActivity.class);
         startActivity(intent);
     }
 
@@ -39,7 +39,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_login);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -54,20 +54,20 @@ public class RegistrationActivity extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-                Toast.makeText(RegistrationActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_barbers) {
-                Toast.makeText(RegistrationActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_bookings) {
-                Toast.makeText(RegistrationActivity.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(RegistrationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_consultation) {
-                Toast.makeText(RegistrationActivity.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_review) {
-                Toast.makeText(RegistrationActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
             }
 
-            Toast.makeText(RegistrationActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, " clicked", Toast.LENGTH_SHORT).show();
             return false;
         });
     }
