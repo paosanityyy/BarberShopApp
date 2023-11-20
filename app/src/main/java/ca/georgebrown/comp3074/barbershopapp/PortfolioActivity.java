@@ -1,7 +1,6 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,18 +15,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import ca.georgebrown.comp3074.barbershopapp.R;
-
-public class RegistrationActivity extends AppCompatActivity {
+public class PortfolioActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
-    public void openLoginActivity(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void openPortfolioActivity(View view) {
+        Intent intent = new Intent(this, PortfolioActivity.class);
         startActivity(intent);
     }
-
     public boolean openMainActivity(MenuItem item) {
         // Handle the menu item click here
         Intent intent = new Intent(this, MainActivity.class);
@@ -35,30 +31,26 @@ public class RegistrationActivity extends AppCompatActivity {
         return true; // Return true to indicate that the event has been handled
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item); // if the hamburger icon is clicked, the drawer will open
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_portfolio);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toggle.syncState(); // syncs the state of the drawer with the state of the hamburger icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // enables the hamburger icon
         toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
-
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -66,39 +58,42 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 if (itemId == R.id.nav_home) {
                     // Navigate to RegistrationActivity
-                    Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                    Intent intent = new Intent(PortfolioActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_barbers) {
-                    Intent intent = new Intent(RegistrationActivity.this, PortfolioActivity.class);
+                    Intent intent = new Intent(PortfolioActivity.this, PortfolioActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_bookings) {
                     // Navigate to BookingActivity
-                    Intent intent = new Intent(RegistrationActivity.this, BookingActivity.class);
+                    Intent intent = new Intent(PortfolioActivity.this, BookingActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
-                    Toast.makeText(RegistrationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PortfolioActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
                 } else if (itemId == R.id.nav_consultation) {
-                    Intent intent = new Intent(RegistrationActivity.this, ConsultationActivity.class);
+                    Intent intent = new Intent(PortfolioActivity.this, ConsultationActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_review) {
-                    Intent intent = new Intent(RegistrationActivity.this, ReviewsActivity.class);
+                    Intent intent = new Intent(PortfolioActivity.this, ReviewsActivity.class);
                     startActivity(intent);
                 }
 
 
-                Toast.makeText(RegistrationActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PortfolioActivity.this, " clicked", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
+
+
     }
 
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else{
             super.onBackPressed();
         }
+
     }
 }
-

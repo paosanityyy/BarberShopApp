@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".BookingActivity$RegistrationActivity">
 
     <!-- Main layout content using LinearLayout -->
     <LinearLayout
@@ -126,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/activity_nav"
-        app:menu="@menu/nav_menu"
+        app:menu="@menu/nav_menu_on"
         android:id="@+id/nav_view"
         android:layout_gravity="start"/>
 

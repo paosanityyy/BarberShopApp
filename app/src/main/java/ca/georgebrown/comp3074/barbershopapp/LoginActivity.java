@@ -1,7 +1,6 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,8 +15,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import ca.georgebrown.comp3074.barbershopapp.R;
-
 public class LoginActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
@@ -25,6 +22,12 @@ public class LoginActivity extends AppCompatActivity {
 
     public void openRegistrationActivity(View view) {
         Intent intent = new Intent(this, RegistrationActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMainActivity(MenuItem item) {
+        // Handle the menu item click here
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -50,25 +53,36 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
 
-        navView.setNavigationItemSelectedListener(item -> {
-            int itemId = item.getItemId();
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
 
-            if (itemId == R.id.nav_home) {
-                Toast.makeText(LoginActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
-            } else if (itemId == R.id.nav_barbers) {
-                Toast.makeText(LoginActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
-            } else if (itemId == R.id.nav_bookings) {
-                Toast.makeText(LoginActivity.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
-            } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
-            } else if (itemId == R.id.nav_consultation) {
-                Toast.makeText(LoginActivity.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
-            } else if (itemId == R.id.nav_review) {
-                Toast.makeText(LoginActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
+                if (itemId == R.id.nav_home) {
+                    // Navigate to RegistrationActivity
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_barbers) {
+                    Intent intent = new Intent(LoginActivity.this, PortfolioActivity.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_bookings) {
+                    // Navigate to BookingActivity
+                    Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_profile) {
+                    Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                } else if (itemId == R.id.nav_consultation) {
+                    Intent intent = new Intent(LoginActivity.this, ConsultationActivity.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_review) {
+                    Intent intent = new Intent(LoginActivity.this, ReviewsActivity.class);
+                    startActivity(intent);
+                }
+
+
+                Toast.makeText(LoginActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+                return false;
             }
-
-            Toast.makeText(LoginActivity.this, " clicked", Toast.LENGTH_SHORT).show();
-            return false;
         });
     }
 

@@ -1,5 +1,11 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,33 +13,16 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 
 
-
-public class MainActivity extends AppCompatActivity {
+public class BookingActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
     public void openRegistrationActivity(View view) {
         Intent intent = new Intent(this, RegistrationActivity.class);
-        startActivity(intent);
-    }
-
-    public void openBookingActivity(View view) {
-        Intent intent = new Intent(this, BookingActivity.class);
-        startActivity(intent);
-    }
-
-    public void openPortfolioActivity(View view) {
-        Intent intent = new Intent(this, PortfolioActivity.class);
         startActivity(intent);
     }
 
@@ -48,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_booking);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -64,27 +53,27 @@ public class MainActivity extends AppCompatActivity {
 
             if (itemId == R.id.nav_home) {
                 // Navigate to RegistrationActivity
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(BookingActivity.this, MainActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_barbers) {
-                Intent intent = new Intent(MainActivity.this, PortfolioActivity.class);
+                Intent intent = new Intent(BookingActivity.this, PortfolioActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_bookings) {
                 // Navigate to BookingActivity
-                Intent intent = new Intent(MainActivity.this, BookingActivity.class);
+                Intent intent = new Intent(BookingActivity.this, BookingActivity.class);
                 startActivity(intent);
 
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(MainActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookingActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_consultation) {
-                Intent intent = new Intent(MainActivity.this, ConsultationActivity.class);
+                Intent intent = new Intent(BookingActivity.this, ConsultationActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_review) {
-                Intent intent = new Intent(MainActivity.this, ReviewsActivity.class);
+                Intent intent = new Intent(BookingActivity.this, ReviewsActivity.class);
                 startActivity(intent);
             }
 
-            Toast.makeText(MainActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BookingActivity.this, " clicked", Toast.LENGTH_SHORT).show();
             return false;
         });
     }
@@ -100,4 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
 }
+

@@ -2,4 +2,11 @@
     <string name="app_name">BarberShopApp</string>
     <string name="open">Open Nav</string>
     <string name="close">Close Nav</string>
+    <string-array name="barbers_array">
+        <item>John Doe</item>
+        <item>Jane Doe</item>
+        <item>Chris Pratt</item>
+        <item>Josh Hutcherson</item>
+        <item>Jill Bill</item>
+    </string-array>
 </resources>

@@ -16,6 +16,18 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".PortfolioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConsultationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
