@@ -8,7 +8,7 @@ Barber Shop Application to book appointments, showcase barber portfolio and a li
 
 # Van Dexter Perez - 101181929
 
-# Milanie - Bano 101355992
+# Milanie Bano - 101355992
 
 
 
