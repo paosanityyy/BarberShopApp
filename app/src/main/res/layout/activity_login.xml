@@ -40,6 +40,8 @@
             android:hint="Password"
             android:inputType="textPassword"/>
 
+        <!-- Add other views as needed -->
+
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
@@ -47,9 +49,7 @@
             android:layout_below="@id/password"
             android:layout_marginTop="25dp"
             android:backgroundTint="@color/black"
-            android:text="LOGIN"/>
-
-        <!-- Add other views as needed -->
+            android:text="LOGIN" />
 
         <TextView
             android:id="@+id/textViewregisterLink"

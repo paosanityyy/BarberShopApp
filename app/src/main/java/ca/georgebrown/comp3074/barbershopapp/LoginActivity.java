@@ -54,11 +54,15 @@ public class LoginActivity extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-                Toast.makeText(LoginActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
+                // Navigate to RegistrationActivity
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_barbers) {
                 Toast.makeText(LoginActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_bookings) {
-                Toast.makeText(LoginActivity.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
+                // Navigate to BookingActivity
+                Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_profile) {
                 Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_consultation) {

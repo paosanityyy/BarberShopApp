@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -44,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_home) {
-                    Toast.makeText(MainActivity.this, "Home Selected", Toast.LENGTH_SHORT).show();
+                    // Navigate to RegistrationActivity
+                    Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_barbers) {
                     Toast.makeText(MainActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
                 } else if (itemId == R.id.nav_bookings) {
-                    Toast.makeText(MainActivity.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
+                    // Navigate to BookingActivity
+                    Intent intent = new Intent(MainActivity.this, BookingActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
                     Toast.makeText(MainActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
                 } else if (itemId == R.id.nav_consultation) {
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_review) {
                     Toast.makeText(MainActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
                 }
+
 
                 Toast.makeText(MainActivity.this, " clicked", Toast.LENGTH_SHORT).show();
                 return false;

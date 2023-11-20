@@ -16,15 +16,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import ca.georgebrown.comp3074.barbershopapp.R;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class BookingActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
-    public void openLoginActivity(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void openRegistrationActivity(View view) {
+        Intent intent = new Intent(this, RegistrationActivity.class);
         startActivity(intent);
     }
 
@@ -39,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_booking);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -55,23 +54,24 @@ public class RegistrationActivity extends AppCompatActivity {
 
             if (itemId == R.id.nav_home) {
                 // Navigate to RegistrationActivity
-                Intent intent = new Intent(RegistrationActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(BookingActivity.this, RegistrationActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_barbers) {
-                Toast.makeText(RegistrationActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookingActivity.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_bookings) {
                 // Navigate to BookingActivity
-                Intent intent = new Intent(RegistrationActivity.this, BookingActivity.class);
+                Intent intent = new Intent(BookingActivity.this, BookingActivity.class);
                 startActivity(intent);
+
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(RegistrationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookingActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_consultation) {
-                Toast.makeText(RegistrationActivity.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookingActivity.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_review) {
-                Toast.makeText(RegistrationActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BookingActivity.this, "Review Selected", Toast.LENGTH_SHORT).show();
             }
 
-            Toast.makeText(RegistrationActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BookingActivity.this, " clicked", Toast.LENGTH_SHORT).show();
             return false;
         });
     }
@@ -84,5 +84,6 @@ public class RegistrationActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 }
 
