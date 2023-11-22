@@ -20,16 +20,6 @@ public class LoginActivity extends AppCompatActivity {
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
-    public void openRegistrationActivity(View view) {
-        Intent intent = new Intent(this, RegistrationActivity.class);
-        startActivity(intent);
-    }
-
-    public void openMainActivity(MenuItem item) {
-        // Handle the menu item click here
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
