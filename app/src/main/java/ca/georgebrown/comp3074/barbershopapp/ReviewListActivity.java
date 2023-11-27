@@ -12,22 +12,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 
-public class ReviewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class ReviewListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -35,11 +29,6 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void openConsultationActivity(View view) {
-        Intent intent = new Intent(this, ConsultationActivity.class);
-        startActivity(intent);
     }
 
     @Override
@@ -50,9 +39,9 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
         Spinner spinnerBarbers =  findViewById(R.id.barbers_spinner);
 
         ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(
-        this,
-        R.array.barbers_array,
-        android.R.layout.simple_spinner_item
+                this,
+                R.array.barbers_array,
+                android.R.layout.simple_spinner_item
         );
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -74,45 +63,35 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
 
             if (itemId == R.id.nav_home) {
                 // Navigate to RegistrationActivity
-                Intent intent = new Intent(ReviewsActivity.this, MainActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, MainActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_barbers) {
-                Intent intent = new Intent(ReviewsActivity.this, PortfolioActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, PortfolioActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_bookings) {
                 // Navigate to BookingActivity
-                Intent intent = new Intent(ReviewsActivity.this, BookingActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, BookingActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_availability) {
                 // Navigate to BookingActivity
-                Intent intent = new Intent(ReviewsActivity.this, AvailabilityActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, AvailabilityActivity.class);
                 startActivity(intent);
 
             } else if (itemId == R.id.nav_profile) {
-                Intent intent = new Intent(ReviewsActivity.this, UserProfile.class);
-                startActivity(intent);
+                Toast.makeText(ReviewListActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_consultation) {
-                Intent intent = new Intent(ReviewsActivity.this, ConsultationActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, ConsultationActivity.class);
                 startActivity(intent);
             } else if (itemId == R.id.nav_review) {
-                Intent intent = new Intent(ReviewsActivity.this, ReviewsActivity.class);
+                Intent intent = new Intent(ReviewListActivity.this, ReviewsActivity.class);
                 startActivity(intent);
             }
 
-            Toast.makeText(ReviewsActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReviewListActivity.this, " clicked", Toast.LENGTH_SHORT).show();
             return false;
         });
 
-        //Review List Button
-        Button btnReviewList = findViewById(R.id.review_list);
-
-        btnReviewList.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewsActivity.this, ReviewListActivity.class);
-            startActivity(intent);
-        });
-
     }
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -123,6 +102,4 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }
-
-
 }

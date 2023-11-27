@@ -35,6 +35,15 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/review_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/black"
+            android:text="Review List"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
@@ -85,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/black"
-            android:text="Button" />
+            android:text="Send" />
 
     </LinearLayout>
 

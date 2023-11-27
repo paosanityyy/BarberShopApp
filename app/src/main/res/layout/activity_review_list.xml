@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewListActivity">
+
+
+    <TextView
+        android:id="@+id/txtReview1"
+        android:layout_width="412dp"
+        android:layout_height="150dp"
+        android:background="@drawable/my_border"
+        android:padding="5sp"
+        android:paddingStart="5sp"
+        android:paddingLeft="5sp"
+        android:paddingTop="5sp"
+        android:paddingEnd="5sp"
+        android:paddingRight="5sp"
+        android:paddingBottom="5sp"
+        android:text="John Doe was an amazing barber. He gave great and advice, was patient, and was kind. I walked out with a great cut thanks to him. Would highly recommend coming in to see John."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <TextView
+        android:id="@+id/txtReview2"
+        android:layout_width="413dp"
+        android:layout_height="159dp"
+        android:background="@drawable/my_border"
+        android:padding="5sp"
+        android:paddingStart="5sp"
+        android:paddingLeft="5sp"
+        android:paddingTop="5sp"
+        android:paddingEnd="5sp"
+        android:paddingRight="5sp"
+        android:paddingBottom="5sp"
+        android:text="Leave us a Review and tell us how we did!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+    <TextView
+        android:id="@+id/lblReviewList"
+        android:layout_width="412dp"
+        android:layout_height="47dp"
+        android:background="#C8000000"
+        android:paddingTop="10sp"
+        android:text="Review List"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <Spinner
+        android:id="@+id/barbers_spinner"
+        android:layout_width="173dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please choose a barber:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <TextView
+        android:id="@+id/txtReview3"
+        android:layout_width="413dp"
+        android:layout_height="151dp"
+        android:background="@drawable/my_border"
+        android:padding="5sp"
+        android:paddingStart="5sp"
+        android:paddingLeft="5sp"
+        android:paddingTop="5sp"
+        android:paddingEnd="5sp"
+        android:paddingRight="5sp"
+        android:paddingBottom="5sp"
+        android:text="Leave us a Review and tell us how we did!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.915" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
