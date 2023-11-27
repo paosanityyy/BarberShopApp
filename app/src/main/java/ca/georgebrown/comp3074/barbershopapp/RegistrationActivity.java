@@ -80,7 +80,8 @@ public class RegistrationActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegistrationActivity.this, AvailabilityActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
-                    Toast.makeText(RegistrationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegistrationActivity.this, UserProfile.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_consultation) {
                     Intent intent = new Intent(RegistrationActivity.this, ConsultationActivity.class);
                     startActivity(intent);

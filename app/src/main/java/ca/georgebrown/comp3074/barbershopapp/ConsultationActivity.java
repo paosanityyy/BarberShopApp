@@ -3,6 +3,7 @@ package ca.georgebrown.comp3074.barbershopapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,11 @@ public class ConsultationActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -61,7 +67,8 @@ public class ConsultationActivity extends AppCompatActivity {
                     Intent intent = new Intent(ConsultationActivity.this, AvailabilityActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
-                    Toast.makeText(ConsultationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ConsultationActivity.this, UserProfile.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_consultation) {
                     Intent intent = new Intent(ConsultationActivity.this, ConsultationActivity.class);
                     startActivity(intent);
