@@ -1,7 +1,9 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,8 +12,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,15 +29,68 @@ import java.util.List;
 import java.util.Map;
 
 public class AvailabilityActivity extends AppCompatActivity {
+    DrawerLayout drawerLayout;
+    NavigationView navView;
+    ActionBarDrawerToggle toggle;
 
     private List<String> weekdays;
     private List<String> presetNames;
     private Map<String, List<Boolean>> nameAvailabilityMap; // Mapping names to their availability for weekdays
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availability);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
+
+        navView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home) {
+                // Navigate to RegistrationActivity
+                Intent intent = new Intent(AvailabilityActivity.this, MainActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_barbers) {
+                Intent intent = new Intent(AvailabilityActivity.this, PortfolioActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_bookings) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(AvailabilityActivity.this, BookingActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_availability) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(AvailabilityActivity.this, AvailabilityActivity.class);
+                startActivity(intent);
+
+            } else if (itemId == R.id.nav_profile) {
+                Toast.makeText(AvailabilityActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+            } else if (itemId == R.id.nav_consultation) {
+                Intent intent = new Intent(AvailabilityActivity.this, ConsultationActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_review) {
+                Intent intent = new Intent(AvailabilityActivity.this, ReviewsActivity.class);
+                startActivity(intent);
+            }
+
+            Toast.makeText(AvailabilityActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            return false;
+        });
 
         LinearLayout checkboxContainer = findViewById(R.id.checkboxContainer);
         Button confirmButton = findViewById(R.id.confirmButton);

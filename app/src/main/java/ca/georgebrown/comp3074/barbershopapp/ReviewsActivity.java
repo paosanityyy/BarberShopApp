@@ -1,15 +1,35 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 
 public class ReviewsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    DrawerLayout drawerLayout;
+    NavigationView navView;
+    ActionBarDrawerToggle toggle;
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +44,52 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
         android.R.layout.simple_spinner_item
         );
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerBarbers.setAdapter(adapter);
         spinnerBarbers.setOnItemSelectedListener(this);
+
+        navView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home) {
+                // Navigate to RegistrationActivity
+                Intent intent = new Intent(ReviewsActivity.this, MainActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_barbers) {
+                Intent intent = new Intent(ReviewsActivity.this, PortfolioActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_bookings) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(ReviewsActivity.this, BookingActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_availability) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(ReviewsActivity.this, AvailabilityActivity.class);
+                startActivity(intent);
+
+            } else if (itemId == R.id.nav_profile) {
+                Toast.makeText(ReviewsActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+            } else if (itemId == R.id.nav_consultation) {
+                Intent intent = new Intent(ReviewsActivity.this, ConsultationActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_review) {
+                Intent intent = new Intent(ReviewsActivity.this, ReviewsActivity.class);
+                startActivity(intent);
+            }
+
+            Toast.makeText(ReviewsActivity.this, " clicked", Toast.LENGTH_SHORT).show();
+            return false;
+        });
 
     }
 

@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import ca.georgebrown.comp3074.barbershopapp.R;
@@ -22,17 +23,16 @@ public class RegistrationActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
+    FloatingActionButton fab;
 
     public void openLoginActivity(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
-    public boolean openMainActivity(MenuItem item) {
-        // Handle the menu item click here
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
         startActivity(intent);
-        return true; // Return true to indicate that the event has been handled
     }
 
 

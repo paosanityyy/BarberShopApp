@@ -18,6 +18,9 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".PortfolioActivity"
             android:exported="false" />
         <activity
