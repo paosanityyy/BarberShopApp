@@ -32,6 +32,11 @@ public class UserProfile extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openBookingHistory(View view) {
+        Intent intent = new Intent(this, BookingHistory.class);
+        startActivity(intent);
+    }
+
     public void openConsultationActivity(View view) {
         Intent intent = new Intent(this, ConsultationActivity.class);
         startActivity(intent);

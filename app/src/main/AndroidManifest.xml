@@ -21,7 +21,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".UserProfile"
+            android:name=".BookingHistory"
             android:exported="false" />
         <activity
             android:name=".PortfolioActivity"
@@ -42,7 +42,7 @@
             android:name=".AvailabilityActivity"
             android:exported="false"/>
         <activity
-            android:name=".UserProfile"
+            android:name=".RegistrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
