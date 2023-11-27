@@ -75,6 +75,10 @@ public class RegistrationActivity extends AppCompatActivity {
                     // Navigate to BookingActivity
                     Intent intent = new Intent(RegistrationActivity.this, BookingActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_availability) {
+                    // Navigate to BookingActivity
+                    Intent intent = new Intent(RegistrationActivity.this, AvailabilityActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
                     Toast.makeText(RegistrationActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
                 } else if (itemId == R.id.nav_consultation) {

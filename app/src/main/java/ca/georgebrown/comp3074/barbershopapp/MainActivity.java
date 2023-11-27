@@ -73,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 // Navigate to BookingActivity
                 Intent intent = new Intent(MainActivity.this, BookingActivity.class);
                 startActivity(intent);
+            } else if (itemId == R.id.nav_availability) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(MainActivity.this, AvailabilityActivity.class);
+                startActivity(intent);
 
             } else if (itemId == R.id.nav_profile) {
                 Toast.makeText(MainActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();

@@ -2,6 +2,8 @@
     <string name="app_name">BarberShopApp</string>
     <string name="open">Open Nav</string>
     <string name="close">Close Nav</string>
+    <string name="availability">Availability</string>
+    <string name="confirm">Confirm</string>
     <string-array name="barbers_array">
         <item>John Doe</item>
         <item>Jane Doe</item>

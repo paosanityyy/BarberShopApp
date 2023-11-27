@@ -59,6 +59,10 @@ public class LoginActivity extends AppCompatActivity {
                     // Navigate to BookingActivity
                     Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_availability) {
+                    // Navigate to BookingActivity
+                    Intent intent = new Intent(LoginActivity.this, AvailabilityActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
                     Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
                 } else if (itemId == R.id.nav_consultation) {

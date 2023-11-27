@@ -33,6 +33,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".AvailabilityActivity"
+            android:exported="false"/>
+        <activity
             android:name=".RegistrationActivity"
             android:exported="true">
             <intent-filter>
