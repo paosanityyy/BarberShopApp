@@ -32,10 +32,15 @@ public class UserProfile extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_user_profile);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -50,17 +55,30 @@ public class UserProfile extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-                Toast.makeText(UserProfile.this, "Home Selected", Toast.LENGTH_SHORT).show();
+                // Navigate to RegistrationActivity
+                Intent intent = new Intent(UserProfile.this, MainActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_barbers) {
-                Toast.makeText(UserProfile.this, "Barbers Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserProfile.this, PortfolioActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_bookings) {
-                Toast.makeText(UserProfile.this, "Bookings Selected", Toast.LENGTH_SHORT).show();
+                // Navigate to BookingActivity
+                Intent intent = new Intent(UserProfile.this, BookingActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_availability) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(UserProfile.this, AvailabilityActivity.class);
+                startActivity(intent);
+
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(UserProfile.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserProfile.this, UserProfile.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_consultation) {
-                Toast.makeText(UserProfile.this, "Consultation Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserProfile.this, ConsultationActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_review) {
-                Toast.makeText(UserProfile.this, "Review Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UserProfile.this, ReviewsActivity.class);
+                startActivity(intent);
             }
 
             Toast.makeText(UserProfile.this, " clicked", Toast.LENGTH_SHORT).show();

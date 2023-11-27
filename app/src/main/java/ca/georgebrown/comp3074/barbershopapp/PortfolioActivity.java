@@ -24,11 +24,9 @@ public class PortfolioActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PortfolioActivity.class);
         startActivity(intent);
     }
-    public boolean openMainActivity(MenuItem item) {
-        // Handle the menu item click here
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
         startActivity(intent);
-        return true; // Return true to indicate that the event has been handled
     }
 
     @Override
@@ -72,7 +70,8 @@ public class PortfolioActivity extends AppCompatActivity {
                     Intent intent = new Intent(PortfolioActivity.this, AvailabilityActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
-                    Toast.makeText(PortfolioActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(PortfolioActivity.this, UserProfile.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_consultation) {
                     Intent intent = new Intent(PortfolioActivity.this, ConsultationActivity.class);
                     startActivity(intent);

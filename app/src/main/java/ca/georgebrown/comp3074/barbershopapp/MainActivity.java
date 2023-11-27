@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(MainActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, UserProfile.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_consultation) {
                 Intent intent = new Intent(MainActivity.this, ConsultationActivity.class);
                 startActivity(intent);

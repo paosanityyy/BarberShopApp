@@ -71,6 +71,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
+            android:onClick="openConsultationActivity"
             android:src="@android:drawable/sym_action_chat"
             app:backgroundTint="@color/black"
             app:tint="@android:color/white" />

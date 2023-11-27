@@ -45,6 +45,11 @@ public class AvailabilityActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +84,8 @@ public class AvailabilityActivity extends AppCompatActivity {
                 startActivity(intent);
 
             } else if (itemId == R.id.nav_profile) {
-                Toast.makeText(AvailabilityActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AvailabilityActivity.this, UserProfile.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_consultation) {
                 Intent intent = new Intent(AvailabilityActivity.this, ConsultationActivity.class);
                 startActivity(intent);

@@ -29,6 +29,11 @@ public class LoginActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openConsultationActivity(View view) {
+        Intent intent = new Intent(this, ConsultationActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, AvailabilityActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
-                    Toast.makeText(LoginActivity.this, "My Account Selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, UserProfile.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_consultation) {
                     Intent intent = new Intent(LoginActivity.this, ConsultationActivity.class);
                     startActivity(intent);
