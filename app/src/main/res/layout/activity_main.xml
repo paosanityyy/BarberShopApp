@@ -6,58 +6,253 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".PortfolioActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textAlignment="center">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-84dp">
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="285dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/logo" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginEnd="90dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/roboto"
-            android:backgroundTint="@color/black"
-            android:text="Book Appointment"
-            android:onClick="openBookingActivity"
-            app:layout_constraintBottom_toTopOf="@+id/button4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="90dp"
-            android:layout_marginBottom="163dp"
-            android:fontFamily="@font/roboto"
-            android:text="Barbers"
-            android:onClick="openPortfolioActivity"
-            android:backgroundTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="90dp"
+                app:srcCompat="@drawable/logo" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:backgroundTint="@color/black"
+                android:text="Book Appointment"
+                android:onClick="openBookingActivity"
+                app:layout_constraintBottom_toTopOf="@+id/button4"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="200dp"
+                android:padding="15dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto"
+
+                android:text=" Barbers "
+                android:onClick="openPortfolioActivity"
+                android:backgroundTint="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+
+            <View
+                android:id="@+id/separatorLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="80dp"/>
+
+            <!-- "About Us" TextView -->
+            <TextView
+                android:id="@+id/aboutUsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorLine"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#FFFFFF"
+                android:fontFamily="monospace"
+                android:padding="0dp"
+                android:text="About Central Studios"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+
+            <ImageView
+                android:id="@+id/shop"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/shop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/shop" />
+
+            <TextView
+                android:id="@+id/aboutUsTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorLine"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#FFFFFF"
+                android:fontFamily="monospace"
+                android:padding="0dp"
+                android:text="We are..."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/roboto"
+                android:padding="10dp"
+                android:text="Lorem Ipsum has been the industry's ever since At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id"
+                android:textAlignment="center"
+                android:textSize="16dp" />
+
+
+            <View
+                android:id="@+id/separatorLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="30dp"/>
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorLine"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="monospace"
+                android:text="Central Studios"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto"
+                android:text="876 Weston Road, York, Ontario M5N 3R6, Canada"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto"
+                android:text="centrastudio01@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/contacts1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/roboto"
+                android:text="(416)766-6957"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+
+            <TextView
+                android:id="@+id/aboutUsTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorLine"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:fontFamily="monospace"
+                android:text="Hours"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/aboutUsTextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorLine"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Monday:   Closed"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/aboutUsTextView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separatorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Tuesday - Thursday:   11:00am - 7:00pm"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/aboutUsTextView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separatorLine"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Friday:   10:00am - 7:00pm"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/aboutUsTextView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separatorLine"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Saturday: 10:00am - 8:00pm"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/aboutUsTextView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separatorLine"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Sunday:       11:00am - 6:00pm"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="60dp"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -68,8 +263,8 @@
             android:id="@+id/fabLiveChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
             android:onClick="openConsultationActivity"
             android:src="@android:drawable/sym_action_chat"
@@ -85,6 +280,5 @@
         app:menu="@menu/nav_menu_on"
         android:id="@+id/nav_view"
         android:layout_gravity="start"/>
-
 </androidx.drawerlayout.widget.DrawerLayout>
 
