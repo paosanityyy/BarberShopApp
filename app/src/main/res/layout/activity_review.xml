@@ -9,78 +9,128 @@
     tools:context=".ReviewsActivity">
 
     <!-- Main layout content using LinearLayout -->
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <!-- NavigationView -->
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:headerLayout="@layout/activity_nav"
+        app:menu="@menu/nav_menu_on"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabLiveChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openConsultationActivity"
+            android:src="@android:drawable/sym_action_chat"
+            app:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.962"
+            app:tint="@android:color/white" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="200dp"
-            android:layout_height="140dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_width="196dp"
+            android:layout_height="128dp"
+            android:layout_marginBottom="460dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007"
+            android:src="@drawable/logo"/>
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="411dp"
+            android:layout_height="51dp"
             android:background="#A3000000"
             android:padding="5dp"
             android:text="Leave a Review"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/review_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/black"
-            android:text="Review List"
-            android:textSize="20sp" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.172" />
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="75dp"
+            android:layout_width="382dp"
+            android:layout_height="47dp"
             android:text="Please choose a Barber:"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.413"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.305" />
 
         <Spinner
             android:id="@+id/barbers_spinner"
             android:layout_width="210dp"
             android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_width="387dp"
+            android:layout_height="55dp"
             android:gravity="center"
             android:text="Tell us about your experience today!:"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:numStars="5" />
+            android:numStars="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.594" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/textInputLayout"
+            android:layout_width="347dp"
+            android:layout_height="103dp"
             android:gravity="center_horizontal"
-            android:padding="20dp">
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.756">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -92,38 +142,30 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:backgroundTint="@color/black"
-            android:text="Send" />
+            android:text="Send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.856" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/review_list"
+            android:layout_width="176dp"
+            android:layout_height="49dp"
+            android:backgroundTint="@color/black"
+            android:onClick="openReviewListActivity"
+            android:text="Review List"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.952" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabLiveChat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:onClick="openConsultationActivity"
-            android:src="@android:drawable/sym_action_chat"
-            app:backgroundTint="@color/black"
-            app:tint="@android:color/white" />
-
-    </RelativeLayout>
-
-    <!-- NavigationView -->
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:headerLayout="@layout/activity_nav"
-        app:menu="@menu/nav_menu_on"
-        android:id="@+id/nav_view"
-        android:layout_gravity="start"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

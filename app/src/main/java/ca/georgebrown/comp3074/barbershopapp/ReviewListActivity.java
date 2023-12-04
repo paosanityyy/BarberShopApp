@@ -39,10 +39,13 @@ public class ReviewListActivity extends AppCompatActivity implements AdapterView
         Spinner spinnerBarbers =  findViewById(R.id.barbers_spinner);
 
         ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.barbers_array,
-                android.R.layout.simple_spinner_item
+        this,
+        R.array.barbers_array,
+        android.R.layout.simple_spinner_item
         );
+
+        spinnerBarbers.setAdapter(adapter);
+        spinnerBarbers.setOnItemSelectedListener(this);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -53,10 +56,6 @@ public class ReviewListActivity extends AppCompatActivity implements AdapterView
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerBarbers.setAdapter(adapter);
-        spinnerBarbers.setOnItemSelectedListener(this);
 
         navView.setNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -98,8 +97,7 @@ public class ReviewListActivity extends AppCompatActivity implements AdapterView
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String selectedBarber = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, selectedBarber, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

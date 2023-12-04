@@ -42,6 +42,11 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
         startActivity(intent);
     }
 
+    public void openReviewListActivity(View view) {
+        Intent intent = new Intent(this, ReviewListActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,22 +110,13 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
             Toast.makeText(ReviewsActivity.this, " clicked", Toast.LENGTH_SHORT).show();
             return false;
         });
-
-        //Review List Button
-        Button btnReviewList = findViewById(R.id.review_list);
-
-        btnReviewList.setOnClickListener(v -> {
-            Intent intent = new Intent(ReviewsActivity.this, ReviewListActivity.class);
-            startActivity(intent);
-        });
-
     }
 
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String selectedBarber = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, selectedBarber, Toast.LENGTH_SHORT).show();
+//        String selectedBarber = parent.getItemAtPosition(position).toString();
+//        Toast.makeText(this, selectedBarber, Toast.LENGTH_SHORT).show();
     }
 
     @Override
