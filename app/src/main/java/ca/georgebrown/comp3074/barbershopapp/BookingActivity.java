@@ -164,7 +164,6 @@ public class BookingActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all details", Toast.LENGTH_SHORT).show();
         }
     }
-    // ... (The rest of your code remains unchanged)
 
     // Helper method to provide dummy data for barber spinner
     private String[] getBarberData() {
