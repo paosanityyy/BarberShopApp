@@ -29,6 +29,12 @@ public class LoginActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    public void openLoginActivity(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
     public void openConsultationActivity(View view) {
         Intent intent = new Intent(this, ConsultationActivity.class);
         startActivity(intent);
@@ -77,6 +83,9 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else if (itemId == R.id.nav_review) {
                     Intent intent = new Intent(LoginActivity.this, ReviewsActivity.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_logout) {
+                    Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
 

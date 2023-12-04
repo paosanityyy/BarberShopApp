@@ -78,6 +78,9 @@ public class PortfolioActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_review) {
                     Intent intent = new Intent(PortfolioActivity.this, ReviewsActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_logout) {
+                    Intent intent = new Intent(PortfolioActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
 
 

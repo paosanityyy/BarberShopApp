@@ -97,6 +97,9 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
             } else if (itemId == R.id.nav_review) {
                 Intent intent = new Intent(ReviewsActivity.this, ReviewsActivity.class);
                 startActivity(intent);
+            } else if (itemId == R.id.nav_logout) {
+                Intent intent = new Intent(ReviewsActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
 
             Toast.makeText(ReviewsActivity.this, " clicked", Toast.LENGTH_SHORT).show();

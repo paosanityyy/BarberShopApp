@@ -138,6 +138,9 @@ public class BookingActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_review) {
                 Intent intent = new Intent(BookingActivity.this, ReviewsActivity.class);
                 startActivity(intent);
+            } else if (itemId == R.id.nav_logout) {
+                Intent intent = new Intent(BookingActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
 
             Toast.makeText(BookingActivity.this, " clicked", Toast.LENGTH_SHORT).show();

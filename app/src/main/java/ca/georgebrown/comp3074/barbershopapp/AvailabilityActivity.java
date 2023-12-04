@@ -92,6 +92,9 @@ public class AvailabilityActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_review) {
                 Intent intent = new Intent(AvailabilityActivity.this, ReviewsActivity.class);
                 startActivity(intent);
+            } else if (itemId == R.id.nav_logout) {
+                Intent intent = new Intent(AvailabilityActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
 
             Toast.makeText(AvailabilityActivity.this, " clicked", Toast.LENGTH_SHORT).show();

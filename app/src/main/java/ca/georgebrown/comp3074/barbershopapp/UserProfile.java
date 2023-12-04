@@ -84,6 +84,9 @@ public class UserProfile extends AppCompatActivity {
             } else if (itemId == R.id.nav_review) {
                 Intent intent = new Intent(UserProfile.this, ReviewsActivity.class);
                 startActivity(intent);
+            } else if (itemId == R.id.nav_logout) {
+                Intent intent = new Intent(UserProfile.this, LoginActivity.class);
+                startActivity(intent);
             }
 
             Toast.makeText(UserProfile.this, " clicked", Toast.LENGTH_SHORT).show();

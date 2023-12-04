@@ -88,6 +88,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_review) {
                     Intent intent = new Intent(RegistrationActivity.this, ReviewsActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_logout) {
+                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
 
 

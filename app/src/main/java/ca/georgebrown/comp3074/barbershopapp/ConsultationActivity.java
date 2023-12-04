@@ -75,6 +75,9 @@ public class ConsultationActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_review) {
                     Intent intent = new Intent(ConsultationActivity.this, ReviewsActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_logout) {
+                    Intent intent = new Intent(ConsultationActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
 
 
