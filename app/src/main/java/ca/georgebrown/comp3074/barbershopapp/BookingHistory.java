@@ -5,21 +5,24 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.navigation.NavigationView;
 
 
 public class BookingHistory extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    private RecyclerView recyclerView;
-
+    private NavigationView navView;
+    private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +30,49 @@ public class BookingHistory extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+        navView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, android.R.color.black));
+
+        navView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home) {
+                // Navigate to RegistrationActivity
+                Intent intent = new Intent(BookingHistory.this, MainActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_barbers) {
+                Intent intent = new Intent(BookingHistory.this, PortfolioActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_bookings) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(BookingHistory.this, BookingActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_availability) {
+                // Navigate to BookingActivity
+                Intent intent = new Intent(BookingHistory.this, AvailabilityActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_profile) {
+                Intent intent = new Intent(BookingHistory.this, UserProfile.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_consultation) {
+                Intent intent = new Intent(BookingHistory.this, ConsultationActivity.class);
+                startActivity(intent);
+            } else if (itemId == R.id.nav_review) {
+                Intent intent = new Intent(BookingHistory.this, ReviewsActivity.class);
+                startActivity(intent);
+            }
+
+            Toast.makeText(BookingHistory.this, " clicked", Toast.LENGTH_SHORT).show();
+            return false;
+        });
+
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
 
         // Retrieve booking information from the intent
         Intent intent = getIntent();
@@ -45,7 +85,7 @@ public class BookingHistory extends AppCompatActivity {
             }
         }
 
-        
+
 
     }
 
@@ -70,7 +110,6 @@ public class BookingHistory extends AppCompatActivity {
 
     // Display booking details in your UI
     private void displayBookingDetails(Booking booking) {
-        // Example: Assuming you have TextViews with ids 'dateTextView', 'serviceTextView', etc.
         TextView dateTextView = findViewById(R.id.bookingDateTextView);
         TextView serviceTextView = findViewById(R.id.bookingServiceTextView);
         TextView barberTextView = findViewById(R.id.bookingBarberTextView);

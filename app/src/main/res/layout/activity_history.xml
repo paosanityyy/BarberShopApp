@@ -73,8 +73,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/activity_nav"
-        app:menu="@menu/nav_menu_on"
+        app:menu="@menu/nav_menu"
         android:id="@+id/nav_view"
         android:layout_gravity="start"/>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
