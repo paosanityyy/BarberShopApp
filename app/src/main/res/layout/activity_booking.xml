@@ -18,8 +18,8 @@
         <!-- ImageView for the logo -->
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="200dp"
-            android:layout_height="140dp"
+            android:layout_width="359dp"
+            android:layout_height="134dp"
             android:layout_gravity="center"
             android:layout_marginBottom="0dp"
             android:src="@drawable/logo" />
@@ -85,12 +85,14 @@
             android:layout_height="200dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp">
-
-            <CalendarView
-                android:id="@+id/calendarView"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
+                android:layout_height="match_parent">
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </ScrollView>
         </LinearLayout>
 
         <TextView
@@ -111,70 +113,58 @@
             android:layout_gravity="center"
             android:layout_margin="10dp">
 
-            <Button
-                android:id="@+id/ten"
-                android:layout_width="wrap_content"
+            <!-- Add this to your activity_booking.xml file -->
+            <RadioGroup
+                android:id="@+id/timeRadioGroup"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:backgroundTint="@color/underLine"
-                android:textColor="@color/black"
-                android:text="10:00 am"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="15dp"/>
-            <Button
-                android:id="@+id/eleven"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:backgroundTint="@color/underLine"
-                android:textColor="@color/black"
-                android:text="11:00 am"
+                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginRight="5dp"/>
+                android:layout_margin="10dp">
 
-            <Button
-                android:id="@+id/twelve"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:backgroundTint="@color/underLine"
-                android:textColor="@color/black"
-                android:text="12:00 am"
-                android:layout_gravity="center"/>
+                <RadioButton
+                    android:id="@+id/ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00 am"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:buttonTint="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/eleven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11:00 am"
+                    android:layout_marginRight="5dp"
+                    android:buttonTint="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/twelve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00 pm"
+                    android:buttonTint="@color/black" />
+
+
+            </RadioGroup>
+
         </LinearLayout>
 
         <Button
             android:id="@+id/buttonBooking"
-            android:layout_width="match_parent"
+            android:layout_width="139dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
+            android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/black"
-            android:text="Book"
-            android:layout_gravity="center"/>
+            android:onClick="onBookButtonClick"
+            android:text="Book Now" />
 
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <!-- FloatingActionButton for live chat -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabLiveChat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:onClick="openConsultationActivity"
-            android:src="@android:drawable/sym_action_chat"
-            app:backgroundTint="@color/black"
-            app:tint="@android:color/white" />
-
-    </RelativeLayout>
 
     <!-- NavigationView -->
     <com.google.android.material.navigation.NavigationView

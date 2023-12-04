@@ -1,22 +1,25 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
+
+import android.widget.TextView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+
+
 public class BookingHistory extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    private ListView listView;
+    private RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +32,21 @@ public class BookingHistory extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listView = findViewById(R.id.listView);
 
-        // Sample data for booking history
-        String[] bookingHistoryData = {"Booking 1", "Booking 2", "Booking 3"};
 
-        // Use your custom adapter if you have one
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bookingHistoryData);
-        listView.setAdapter(adapter);
+        // Retrieve booking information from the intent
+        Intent intent = getIntent();
+        if (intent != null) {
+            Booking booked = (Booking) intent.getSerializableExtra("booking");
 
-        // Set item click listener for the ListView
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Handle item click, e.g., show details of the selected booking
-                String selectedItem = (String) parent.getItemAtPosition(position);
-                Toast.makeText(BookingHistory.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
+            // Display booking details in your UI
+            if (booked != null) {
+                displayBookingDetails(booked);
             }
-        });
+        }
+
+        
+
     }
 
     // Handle navigation drawer item clicks
@@ -67,5 +67,20 @@ public class BookingHistory extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-}
 
+    // Display booking details in your UI
+    private void displayBookingDetails(Booking booking) {
+        // Example: Assuming you have TextViews with ids 'dateTextView', 'serviceTextView', etc.
+        TextView dateTextView = findViewById(R.id.bookingDateTextView);
+        TextView serviceTextView = findViewById(R.id.bookingServiceTextView);
+        TextView barberTextView = findViewById(R.id.bookingBarberTextView);
+        TextView timeTextView = findViewById(R.id.bookingTimeTextView);
+
+        // Set the booking information in TextViews
+        dateTextView.setText("Date: " + booking.getDate());
+        serviceTextView.setText("Service: " + booking.getService());
+        barberTextView.setText("Barber: " + booking.getBarber());
+        timeTextView.setText("Time: " + booking.getTime());
+    }
+
+}
