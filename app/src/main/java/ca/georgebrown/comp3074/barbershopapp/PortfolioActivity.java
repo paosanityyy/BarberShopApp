@@ -2,8 +2,10 @@ package ca.georgebrown.comp3074.barbershopapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,15 @@ public class PortfolioActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
+
+    private ImageView sampleImageView;
+    private int [] imageArray = {R.drawable.c1, R.drawable.c2, R.drawable.c3};
+    private int currentIndex = 0;
+
+    private ImageView cutsSampleImageView;
+    private int[] imageArray2 = {R.drawable.jc1, R.drawable.jc2};
+    private int currentIndex2 = 0;
+
 
     public void openPortfolioActivity(View view) {
         Intent intent = new Intent(this, PortfolioActivity.class);
@@ -41,6 +52,42 @@ public class PortfolioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portfolio);
+
+        sampleImageView = findViewById(R.id.sampleImages);
+        startSlideShow();
+
+        cutsSampleImageView = findViewById(R.id.CutsSample);
+        updateImageView();
+
+        findViewById(R.id.btnPrev).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPrev();
+            }
+        });
+
+        findViewById(R.id.btnNextpic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showNext();
+            }
+
+        });
+
+
+        findViewById(R.id.btnPrevious).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPreviousImage();
+            }
+        });
+
+        findViewById(R.id.btnNext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showNextImage();
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -88,9 +135,9 @@ public class PortfolioActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -100,6 +147,33 @@ public class PortfolioActivity extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
+    }
 
+    private void startSlideShow() {
+        sampleImageView.setImageResource(imageArray[currentIndex]);
+    }
+
+    private void showPrev() {
+        currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+        startSlideShow();
+    }
+
+    private void showNext() {
+        currentIndex = (currentIndex + 1) % imageArray.length;
+        startSlideShow();
+    }
+
+    private void updateImageView() {
+        cutsSampleImageView.setImageResource(imageArray2[currentIndex2]);
+    }
+
+    private void showPreviousImage() {
+        currentIndex2 = (currentIndex2 - 1 + imageArray2.length) % imageArray2.length;
+        updateImageView();
+    }
+
+    private void showNextImage() {
+        currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
+        updateImageView();
     }
 }

@@ -10,88 +10,335 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-84dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="30dp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="200dp"
-                android:layout_height="75dp"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/logo"
+                android:layout_marginTop="30dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:fontFamily="monospace"
+                android:text="Barbers"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="175dp"
+                android:layout_width="wrap_content"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/jr" />
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/jr"
+                android:layout_marginRight="5dp"/>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JR"
+                android:fontFamily="monospace"
+                android:text="Logan"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto"
+                android:textSize="15dp"
                 android:text="For the past six years, I have proudly worn the title of a barber, and it's not just a profession for me; it's a lifelong passion. This journey has been marked by an unwavering commitment to honing my craft, always striving to offer the people I serve the pinnacle of modern-class haircuts."
                 android:textAlignment="center" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btnPrev"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="125dp"
+                    app:icon="@drawable/baseline_arrow_back_ios_new_24"
+                    app:iconTint="@color/black"
+                    android:layout_marginRight="5dp"
+                    android:stateListAnimator="@null"/>
 
                 <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:id="@+id/sampleImages"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/c1"
                     app:srcCompat="@drawable/c1" />
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    app:srcCompat="@drawable/c2" />
+                <Button
+                    android:id="@+id/btnNextpic"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="125dp"
+                    app:icon="@drawable/baseline_arrow_forward_ios_24"
+                    app:iconTint="@color/black"
+                    android:stateListAnimator="@null"/>
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    app:srcCompat="@drawable/c3" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Showcasing some of Logan's finest works"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="30dp"/>
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/jess" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Jess"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto"
+                android:textSize="15dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Tincidunt nunc pulvinar sapien et ligula ullamcorper. Ac ut consequat semper viverra nam libero justo laoreet sit. Vitae turpis massa sed elementum. Vel risus commodo viverra maecenas. Urna duis convallis convallis tellus id interdum velit laoreet. Orci phasellus egestas tellus rutrum tellus pellentesque. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Scelerisque felis imperdiet proin fermentum leo. Augue neque gravida in fermentum et sollicitudin. Porttitor massa id neque aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis. Tellus orci ac auctor augue. Aenean pharetra magna ac placerat."
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btnPrevious"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="125dp"
+                    android:layout_marginRight="5dp"
+                    app:icon="@drawable/baseline_arrow_back_ios_new_24"
+                    app:iconTint="@color/black"
+                    android:stateListAnimator="@null"/>
+
+                <ImageView
+                    android:id="@+id/CutsSample"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/jc1"
+                    app:srcCompat="@drawable/jc1" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="125dp"
+                    app:icon="@drawable/baseline_arrow_forward_ios_24"
+                    app:iconTint="@color/black"
+                    android:stateListAnimator="@null"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Showcasing some of Jess'finest works"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Central Studios Price List"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Line up - $25"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="A stylish hairstyle for men that features clean, solid lines around the edge of the hair"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="General haircut - $55"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Ac ut consequat semper viverra nam libero justo laoreet sit. Vitae turpis massa sed elementum"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Haircut and beard - $65"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Ac ut consequat semper viverra nam libero justo laoreet sit. Vitae turpis massa sed elementum. Ac ut consequat semper viverra nam libero justo laoreet sit"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Braids - $50"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:text="Ac ut consequat semper viverra nam libero justo laoreet sit iverra nam libero justo laoreet sit"
+                android:layout_marginRight="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Kids haircut - $35"
+                android:layout_marginLeft="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:text="Ac ut consequat semper viverra nam libero justo laoreet sit"
+                android:layout_marginRight="30dp"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textSize="12dp"
+                android:backgroundTint="@color/black"
+                android:text="Book now"
+                android:onClick="openBookingActivity"
+                app:layout_constraintBottom_toTopOf="@+id/button4"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="30dp"
+                android:text="© 2023 Central Studios. All Rights Reserved." />
+
+
         </LinearLayout>
-
-
 
 
     </ScrollView>
@@ -105,8 +352,8 @@
             android:id="@+id/fabLiveChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
             android:onClick="openConsultationActivity"
             android:src="@android:drawable/sym_action_chat"
