@@ -48,6 +48,10 @@ public class PortfolioActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item); // if the hamburger icon is clicked, the drawer will open
     }
 
+    public void openBookingActivity(View view) {
+        Intent intent = new Intent(this, BookingActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

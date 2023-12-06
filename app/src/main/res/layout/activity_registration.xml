@@ -103,6 +103,15 @@
             android:background="?android:attr/selectableItemBackground"
             android:paddingBottom="2dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="© 2023 Central Studios. All Rights Reserved." />
+
     </LinearLayout>
 
     <RelativeLayout
