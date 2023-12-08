@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:onClick="openConsultationActivity"
             android:src="@android:drawable/sym_action_chat"
-            app:backgroundTint="@color/black"
+            app:backgroundTint="@color/material_dynamic_neutral30"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.952"
@@ -55,7 +55,7 @@
             android:id="@+id/textView2"
             android:layout_width="411dp"
             android:layout_height="51dp"
-            android:background="#A3000000"
+            android:background="@color/material_dynamic_neutral30"
             android:padding="5dp"
             android:text="Leave a Review"
             android:textAlignment="center"
@@ -142,7 +142,7 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/material_dynamic_neutral30"
             android:text="Send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -153,9 +153,9 @@
 
         <Button
             android:id="@+id/review_list"
-            android:layout_width="176dp"
-            android:layout_height="49dp"
-            android:backgroundTint="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/material_dynamic_neutral30"
             android:onClick="openReviewListActivity"
             android:text="Review List"
             android:textSize="20sp"
@@ -164,7 +164,8 @@
             app:layout_constraintHorizontal_bias="0.132"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.952" />
+            app:layout_constraintVertical_bias="0.952"
+            app:rippleColor="@color/material_dynamic_neutral30" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

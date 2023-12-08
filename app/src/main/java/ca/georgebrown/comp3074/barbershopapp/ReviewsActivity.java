@@ -25,10 +25,6 @@ public class ReviewsActivity extends AppCompatActivity implements AdapterView.On
     ActionBarDrawerToggle toggle;
 
 
-
-
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (toggle.onOptionsItemSelected(item)) {

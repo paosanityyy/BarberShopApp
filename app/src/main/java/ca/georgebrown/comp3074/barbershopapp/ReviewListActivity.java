@@ -36,16 +36,16 @@ public class ReviewListActivity extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        Spinner spinnerBarbers =  findViewById(R.id.barbers_spinner);
+//        Spinner spinnerBarbers =  findViewById(R.id.barbers_spinner);
+//
+//        ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(
+//        this,
+//        R.array.barbers_array,
+//        android.R.layout.simple_spinner_item
+//        );
 
-        ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(
-        this,
-        R.array.barbers_array,
-        android.R.layout.simple_spinner_item
-        );
-
-        spinnerBarbers.setAdapter(adapter);
-        spinnerBarbers.setOnItemSelectedListener(this);
+//        spinnerBarbers.setAdapter(adapter);
+//        spinnerBarbers.setOnItemSelectedListener(this);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
