@@ -170,12 +170,12 @@ public class BookingActivity extends AppCompatActivity {
 
     // Helper method to provide dummy data for barber spinner
     private String[] getBarberData() {
-        return new String[]{"Logan", "Jess", "Dean"};
+        return new String[]{"JR", "Chito", "Justin"};
     }
 
     // Helper method to provide dummy data for service spinner
     private String[] getServiceData() {
-        return new String[]{"Haircut", "Braid", "Beard Trim"};
+        return new String[]{"Haircut", "Shave", "Beard Trim"};
     }
 
     @Override
