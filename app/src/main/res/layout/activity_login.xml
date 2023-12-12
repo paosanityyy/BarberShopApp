@@ -44,7 +44,7 @@
         <!-- Add other views as needed -->
 
         <Button
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonLogin"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"

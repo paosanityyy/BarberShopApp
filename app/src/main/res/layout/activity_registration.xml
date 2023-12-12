@@ -25,7 +25,7 @@
             android:src="@drawable/logo" />
 
         <EditText
-            android:id="@+id/fname"
+            android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First name"
@@ -33,10 +33,9 @@
             />
 
         <EditText
-            android:id="@+id/lname"
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fname"
             android:layout_marginTop="8dp"
             android:hint="Last name"
             android:inputType="textEmailAddress"/>
@@ -45,7 +44,6 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lname"
             android:layout_marginTop="8dp"
             android:hint="Email"
             android:inputType="text"/>

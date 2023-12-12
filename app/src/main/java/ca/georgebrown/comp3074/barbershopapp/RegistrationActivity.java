@@ -1,10 +1,13 @@
 package ca.georgebrown.comp3074.barbershopapp;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,9 +20,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-import ca.georgebrown.comp3074.barbershopapp.R;
-
 public class RegistrationActivity extends AppCompatActivity {
+
+    EditText firstName, lastName, email, phone, username, password;
+    Button buttonRegister;
     DrawerLayout drawerLayout;
     NavigationView navView;
     ActionBarDrawerToggle toggle;
@@ -30,25 +34,19 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openConsultationActivity(View view) {
-        Intent intent = new Intent(this, ConsultationActivity.class);
-        startActivity(intent);
-    }
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        firstName = findViewById(R.id.firstName);
+        lastName = findViewById(R.id.lastName);
+        email = findViewById(R.id.email);
+        phone = findViewById(R.id.phone);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        buttonRegister = findViewById(R.id.buttonRegister);
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -93,11 +91,52 @@ public class RegistrationActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-
                 Toast.makeText(RegistrationActivity.this, " clicked", Toast.LENGTH_SHORT).show();
-                return false;
+                return true;
             }
         });
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                checkDataEntered();
+            }
+        });
+    }
+
+    boolean isEmail(EditText text){
+        CharSequence email = text.getText().toString();
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
+
+    boolean isEmpty(EditText text){
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
+
+    void checkDataEntered (){
+        if (firstName.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your first name", Toast.LENGTH_SHORT).show();
+        }
+        else if (lastName.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your last name", Toast.LENGTH_SHORT).show();
+        }
+        else if (email.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+        }
+        else if (phone.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
+        }
+        else if (username.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show();
+        }
+        else if (password.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, "Registration Successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -108,5 +147,5 @@ public class RegistrationActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-}
 
+}

@@ -1,9 +1,12 @@
 package ca.georgebrown.comp3074.barbershopapp;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,31 +23,16 @@ public class LoginActivity extends AppCompatActivity {
     NavigationView navView;
     ActionBarDrawerToggle toggle;
 
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public void openLoginActivity(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-
-    public void openConsultationActivity(View view) {
-        Intent intent = new Intent(this, ConsultationActivity.class);
-        startActivity(intent);
-    }
+    EditText username, password;
+    Button buttonLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setupUI();
+        setupListeners();
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navView = findViewById(R.id.nav_view);
@@ -61,18 +49,15 @@ public class LoginActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_home) {
-                    // Navigate to RegistrationActivity
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_barbers) {
                     Intent intent = new Intent(LoginActivity.this, PortfolioActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_bookings) {
-                    // Navigate to BookingActivity
                     Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_availability) {
-                    // Navigate to BookingActivity
                     Intent intent = new Intent(LoginActivity.this, AvailabilityActivity.class);
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
@@ -87,13 +72,54 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_logout) {
                     Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
-
 
                 Toast.makeText(LoginActivity.this, " clicked", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
+    }
+
+    private void setupUI() {
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        buttonLogin = findViewById(R.id.buttonLogin);
+    }
+
+    private void setupListeners() {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkCredentials();
+            }
+        });
+    }
+
+    private void checkCredentials() {
+        String usernameValue = username.getText().toString().trim();
+        String passwordValue = password.getText().toString().trim();
+
+        if (isValidCredentials(usernameValue, passwordValue)) {
+            // Proceed to the next activity (e.g., MainActivity)
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish(); // Close the current activity to prevent going back to login
+        } else {
+            Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isValidCredentials(String username, String password) {
+        return isValidEmail(username) && isValidPassword(password);
+    }
+
+    private boolean isValidEmail(String email) {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private boolean isValidPassword(String password) {
+        return !TextUtils.isEmpty(password) && password.length() >= 4;
     }
 
     @Override
@@ -105,4 +131,3 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-

@@ -29,7 +29,8 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
             <TableRow
                 android:layout_marginTop="10dp">
@@ -39,17 +40,18 @@
                     android:layout_height="wrap_content"
                     android:text="First name: "
                     android:fontFamily="@font/roboto"
-                    android:textSize="17dp" />
+                    android:textSize="17dp"/>
 
                 <TextView
-                    android:id="@+id/firstname"
+                    android:id="@+id/firstNameValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="John"
+                    android:text="Sample"
                     android:fontFamily="@font/roboto"
                     android:textSize="17dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="60dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="50dp"
                     />
             </TableRow>
 
@@ -65,14 +67,15 @@
                     android:textSize="17dp" />
 
                 <TextView
-                    android:id="@+id/lastname"
+                    android:id="@+id/lastNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Doe"
+                    android:text=""
                     android:fontFamily="@font/roboto"
                     android:textSize="17dp"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="50dp"
                     />
             </TableRow>
 
@@ -88,14 +91,15 @@
                     android:layout_marginTop="5dp"/>
 
                 <TextView
-                    android:id="@+id/phone"
+                    android:id="@+id/phoneTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(647) 1111-333"
+                    android:text=""
                     android:fontFamily="@font/roboto"
                     android:textSize="17dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="60dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="50dp"
                     />
             </TableRow>
 
@@ -110,14 +114,15 @@
                     android:textSize="17dp" />
 
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/emailTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="johndoe@gmail.com"
+                    android:text=""
                     android:fontFamily="@font/roboto"
                     android:textSize="17dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="60dp"/>
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="50dp"/>
             </TableRow>
 
         </TableLayout>
@@ -159,6 +164,8 @@
             android:layout_gravity="center"/>
 
     </LinearLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"
